@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color shooter</title>
+    <link rel = "stylesheet" type = "text/css" href = "style.css"/>
+</head>
+<body>
+
+<div id="bg">
+    <img src="images/fon.jpg">
+</div>
+
+
+<div id = "blackFon" hidden></div>
+<div id = "messageBox" align = "center" hidden>
+    <p id = "messageBoxText"></p>
+    <br>
+    <input type = "button" id = "closeMessageWindBtn" class = "myButton" style = "width: 150px" value = "Закрыть">
+</div>
+
+
+<div id = "centerBox">
+    <div id = "welcomeBox">
+        <div align = "center">
+            <img src = "images/title.png">
+            <br>
+            <br>
+            <input type = "button" id = "regBtn" class = "myButton" value = "Регистрация">
+            <br>
+            <br>
+            <input type = "button" id = "avtId" class = "myButton" value = "Авторизация">
+            <br>
+            <br>
+            <p>
+                Логин и пароль пользователя могут состоять<br>только из строчных латинских букв и цифр.
+            </p>
+        </div>
+    </div>
+
+    <div id = "avtorizBox" hidden>
+        <div align = "center">
+               <img src = "images/title.png">
+               <br>
+               <h2>Регистрация</h2>
+               <table>
+                   <tr>
+                       <td>Логин</td>
+                       <td><input id = "avtBox_loginField" placeholder = "maxim123" class = "myText" maxlength="15" type = "text" spellcheck = 'false' autocomplete = 'off'></td>
+                   </tr>
+                   <tr>
+                       <td><br></td>
+                       <td><br></td>
+                   </tr>
+                   <tr>
+                       <td>Пароль &nbsp;&nbsp;&nbsp;</td>
+                       <td><input id = "avtBox_passwordField" placeholder = "aapp55qq" class = "myText" maxlength="15" type = "password" spellcheck = 'false' autocomplete = 'off'></td>
+                   </tr>
+               </table>
+               <br>
+               <br>
+               <input type = "button" id = "regInSystem" class = "myButton" value = "Зарегистрироваться">
+               <br>
+               <br>
+               <input type = "button" id = "backBtn" class = "myButton" value = "Назад">
+        </div>
+    </div>
+
+    <div id = "avtorizationBoxForAvtorization" hidden>
+        <div align = "center">
+            <img src = "images/title.png">
+            <br>
+            <h2>Авторизация</h2>
+            <table>
+                <tr>
+                    <td>Логин</td>
+                    <td><input id = "avtBox_loginField_avtoriz" placeholder = "alex555" class = "myText" maxlength="15" type = "text" spellcheck = 'false' autocomplete = 'off'></td>
+                </tr>
+                <tr>
+                    <td><br></td>
+                    <td><br></td>
+                </tr>
+                <tr>
+                    <td>Пароль &nbsp;&nbsp;&nbsp;</td>
+                    <td><input id = "avtBox_passwordField_avtoriz" placeholder = "xxyy456" class = "myText" maxlength="15" type = "password" spellcheck = 'false' autocomplete = 'off'></td>
+                </tr>
+            </table>
+            <br>
+            <br>
+            <input type = "button" id = "regInSystem_avtoriz" class = "myButton" value = "Войти в аккаунт">
+            <br>
+            <br>
+            <input type = "button" id = "backBtn_avtoriz" class = "myButton" value = "Назад">
+        </div>
+    </div>
+
+    <div id = "mainMenuBox" hidden>
+        <div align = "center">
+            <img src = "images/title.png">
+            <br>
+            <h2>Главное меню</h2>
+            <big><p id = "loginInfoLabel"></p></big>
+            <br>
+            <input type = "button"  id = "createRoomBtn" class = "myButton" value = "Создать комнату">
+            <br>
+            <br>
+            <input type = "button"  id = "findPlayingRoomBtn" class = "myButton" value = "Найти комнату">
+            <br>
+            <br>
+            <input type = "button"  onclick = "goToDescriptionOfGame()" class = "myButton" value = "Описание игры">
+            <br>
+            <br>
+            <input type = "button"  onclick = "exitFunction()" class = "myButton" value = "Выход">
+        </div>
+    </div>
+
+    <div id = "waitingPlayersRoom" hidden>
+        <div align = "center">
+            <img src = "images/title.png">
+            <br>
+            <h2 id = "roomOfPlayerLabel"></h2>
+            <big><p>Ожидание игроков ...</p></big>
+            <p>
+                <table>
+                    <tr>
+                        <td>Игрок 1 (красный):</td>
+                        <td id = "p1">_____________________________</td>
+                    </tr>
+                    <tr>
+                        <td>Игрок 2 (зелёный): &nbsp;&nbsp;&nbsp; </td>
+                        <td id = "p2">_____________________________</td>
+                    </tr>
+                    <tr>
+                        <td>Игрок 3 (синий):</td>
+                        <td id = "p3">_____________________________</td>
+                    </tr>
+                </table>
+            </p>
+            <br>
+            <input type = "button"  id = "deleteRoomBtn" class = "myButton" value = "Удалить комнату">
+        </div>
+    </div>
+
+    <div id = "findRoomBox" hidden>
+        <div align = "center">
+            <img src = "images/title.png">
+            <br>
+            <h2>Список комнат</h2>
+            <table>
+                <tr>
+                    <td>
+                        <p id = "roomsListLabel"></p>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <input type = "button"  id = "stopFindingRooms" class = "myButton" value = "Главное меню">
+        </div>
+    </div>
+
+    <div id = "waitingPlayersRoomForPlayersTwoAndTree" hidden>
+        <div align = "center">
+            <img src = "images/title.png">
+            <br>
+            <h2 id = "MainPlayerName"></h2>
+            <big><p>Ожидание начала игры ...</p></big>
+            <p>
+                <table>
+                    <tr>
+                        <td>Игрок 1 (красный):</td>
+                        <td id = "ppp1">_____________________________</td>
+                    </tr>
+                    <tr>
+                        <td>Игрок 2 (зелёный): &nbsp;&nbsp;&nbsp; </td>
+                        <td id = "ppp2">_____________________________</td>
+                    </tr>
+                    <tr>
+                        <td>Игрок 3 (синий):</td>
+                        <td id = "ppp3">_____________________________</td>
+                    </tr>
+                </table>
+            </p>
+            <br>
+            <input type = "button"  id = "leaveGameRoom" class = "myButton" value = "Покинуть комнату">
+        </div>
+    </div>
+
+    <div id = "gameCanvasBox" hidden>
+        <div align = "center">
+            <canvas width = '700' height = '500' id='can'></canvas>
+            <br>
+            <br>
+            <input type = "button"  id = "leaveGameButton" class = "myButton" value = "Покинуть игру">
+        </div>
+    </div>
+
+</div>
+
+<script src = "scripts/ResultScriptFinish.js"></script>
+
+<script>
+    function exitFunction(){
+        localStorage.setItem("loginAA","1_1_2_2_AA_BB_CC_DD_11_XX");
+        localStorage.setItem("passwordAA","1_1_2_2_AA_BB_CC_DD_11_XX");
+        window.location = "";
+    }
+
+    function goToDescriptionOfGame(){
+        window.location = "aboutGame.html";
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+body
+{
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+#bg {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    z-index: -1;
+}
+
+#bg img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%;
+}
+
+
+#centerBox
+{
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 800px;
+    padding: 20px 25px;
+    height: 600px;
+    background: URL("images/paper.jpg");
+    border-radius: 15px 15px 15px 15px;
+    z-index: 0;
+}
+
+.myButton
+{
+    border-style: solid;
+    border-color: #000000;
+    border-width: 1px;
+    color: white;
+    padding: 10px 30px;
+    outline: none;
+    border-radius: 5px 5px 5px 5px;
+    background: URL("images/metal.jpg");
+    cursor: pointer;
+    width: 400px;
+    font-size: 20px;
+}
+
+.myButton:hover
+{
+    color: lightgreen;
+}
+
+.myText
+{
+    font-size: 20px;
+    border-style: solid;
+    border-color: #000000;
+    border-radius: 5px 5px 5px 5px;
+    outline: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 300px;
+}
+
+#blackFon
+{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.8;
+    z-index: 240;
+}
+
+#messageBox
+{
+    position: fixed;
+    width: 500px;
+    height: 400px;
+    padding: 20px 20px;
+    background: URL("images/paper.jpg");
+    border-radius: 5px 5px 5px 5px;
+    border-style: solid;
+    border-color: #000000;
+    border-width: 4px;
+    z-index: 250;
+}
+
+.playerRoom
+{
+    cursor: pointer;
+    color: black;
+}
+
+.playerRoom:hover
+{
+    color: red;
+}
